@@ -1,0 +1,209 @@
+$square:5rem;
+$halfSquare: $square /2;
+$timing:.4s;
+$violet:rgb(200,100,200);
+$circleDim:$square/10;
+.letters {
+    margin-top: 100;
+    text-align: center;
+}
+.wrapper{
+  position:absolute;
+  background:transparent;
+  height:$square;
+  width:$square;
+  top:calc(50% - #{$halfSquare});
+  left:calc(50% - #{$halfSquare});
+  .heartWrapper{
+    position:absolute;
+    width:100%;
+    height:100%;
+    transition:all $timing cubic-bezier(0.21, 1.79, 0.79, -0.41);
+    transform:rotate(45deg);
+    .heart{
+      position:absolute;
+      top:calc(50% - #{$halfSquare/2} + 5px);
+      left:calc(50% - #{$halfSquare/2} + 5px);
+      width:$halfSquare;
+      height:$halfSquare;
+      box-sizing:border-box;
+      background-color:grey;
+      border-radius: 0 0 10px 0px;
+      transition: all $timing;
+      &:after,
+      &:before{
+        width:$halfSquare;
+        height:$halfSquare;
+        z-index:2;
+        content:' ';
+        display:block;
+        border-radius:100%;
+        position:absolute;
+        background-color:grey;
+        transition: all $timing;
+      }
+      &:after{
+        left:-$halfSquare/2;
+      }
+      &:before{
+        top:-$halfSquare/2;
+        }
+    }
+  }
+  .circle{
+    width:$square*3/2;
+    height:$square*3/2;
+    transform:scale(0.2,0.2);
+    background-color:red;
+    border:0px solid transparent;
+    position:absolute;
+    border-radius:100%;
+    top:calc(50% - #{$square*3/4});
+    left:calc(50% - #{$square*3/4});
+    box-sizing:border-box;
+    position:absolute;
+    transition: all $timing;
+    opacity:0;
+  }
+  .circlesFirst{
+    transform:rotate(5deg);
+    position:absolute;
+    transition: all $timing ease-in, box-shadow $timing*3/4 $timing/4 ease-in,opacity $timing*3/4 $timing/4 ease-in;
+    width:10px;
+    height:10px;
+    background:transparent;
+    border-radius:100%;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+    box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #8CE8C3,
+      $circleDim*3 $circleDim*4 0 #90D2FA,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #CC8EF5,
+      $circleDim*4 -#{$circleDim*3} 0 #8CE8C3,
+      0rem  -#{$circleDim*5} 0 #F58EA7,
+      $circleDim*5 $circleDim 0px #91D2FA,
+      -#{$circleDim*5} $circleDim 0 #92D3FC;
+      opacity:0;
+  }
+  .circlesSecond{
+      transform:rotate(0deg);
+      transition: all $timing ease-in, box-shadow $timing*3/4 $timing/4 ease-in,opacity $timing*3/4 $timing/4 ease-in;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+      width:10px;
+      height:10px;
+      background-color:transparent;
+      position:absolute;
+      border-radius:100%;
+      box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #8BE7C2,
+      $circleDim*3 $circleDim*4 0  #91D1F9,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #CB8DF4,
+      $circleDim*4 -#{$circleDim*3} 0 #8CE8C3,
+      0rem  -#{$circleDim*5} 0 #F48DA6,
+      $circleDim*5 $circleDim 0px #91D2FA,
+      -#{$circleDim*5} $circleDim 0 #CB8DF4;
+      opacity:0;
+    }
+  &.first{
+    .heartWrapper{
+      transform:rotate(45deg) scale(0.1,0.1);
+      .heart{
+        background-color:red;
+        &:after,
+        &:before{
+          background-color:red;
+        }
+      }
+    }
+    .circle{
+      transform:scale(0.7,0.7);
+      background-color:$violet;
+      border:0px solid transparent;
+      opacity:1;
+    }
+  }
+  &.second{
+    .circlesFirst{
+      transform: rotate(7deg) scale(1.4,1.4);
+      box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #8CE8C3,
+      $circleDim*3 $circleDim*4 0 #90D2FA,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #CC8EF5,
+      $circleDim*4 -#{$circleDim*3} 0 #8CE8C3,
+      0rem  -#{$circleDim*5} 0 #F58EA7,
+      $circleDim*5 $circleDim 0px #91D2FA,
+      -#{$circleDim*5} $circleDim 0 #92D3FC;
+      opacity:1;
+    }
+    .circlesSecond{
+       transform: scale(1.2,1.2);
+      box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #8BE7C2,
+      $circleDim*3 $circleDim*4 0  #91D1F9,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #CB8DF4,
+      $circleDim*4 -#{$circleDim*3} 0 #8CE8C3,
+      0rem  -#{$circleDim*5} 0 #F48DA6,
+      $circleDim*5 $circleDim 0px #91D2FA,
+      -#{$circleDim*5} $circleDim 0 #CB8DF4;
+      opacity:1;
+    }
+    .circle{
+      transform:scale(1,1);
+      border:10px solid $violet;
+      background-color:transparent;
+    }
+    .heartWrapper{
+            transform:rotate(45deg) scale(1.2,1.2);
+    .heart{
+        background-color:red;
+        &:after,
+        &:before{
+          background-color:red;
+        }
+      }}
+  }
+  &.third{
+    .circlesFirst{
+      transform: rotate(10deg) scale(1.4,1.4);
+      height:0px;
+      width:0px;
+      box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #A068CE,
+      $circleDim*3 $circleDim*4 0 #99E9C8,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #D3F491,
+      $circleDim*4 -#{$circleDim*3} 0 #59C392,
+      0rem  -#{$circleDim*5} 0 #CAADC7,
+      $circleDim*5 $circleDim 0px #CA5ED8,
+      -#{$circleDim*5} $circleDim 0 #C35DD1;
+      opacity:1;
+    }
+    .circlesSecond{
+      transform: scale(1.2,1.2);
+      height:0px;
+      width:0px;
+      box-shadow: 
+      -#{$circleDim*3} $circleDim*4 0 #B752E1,
+      $circleDim*3 $circleDim*4 0 #BAE3D7,
+      -#{$circleDim*4} -#{$circleDim*3} 0 #DCE483,
+      $circleDim*4 -#{$circleDim*3} 0 #67CD9F,
+      0rem  -#{$circleDim*5} 0 #959FF3,
+      $circleDim*5 $circleDim 0px #A975D1,
+      -#{$circleDim*5} $circleDim 0 #90E0BE;
+      opacity:1;
+    }
+    .circle{
+      transform:scale(0.1,0.1);
+      border:0px solid transparent;
+      background-color:transparent;
+    }
+    .heartWrapper{
+    .heart{
+        background-color:red;
+        &:after,
+        &:before{
+          background-color:red;
+        }
+      }}
+  }
+}

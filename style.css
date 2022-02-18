@@ -1,0 +1,210 @@
+#letters {
+  margin-top: 100;
+  text-align: center;
+}
+body {
+  background-color: rgb(255, 173, 198);
+}
+.wrapper {
+  position: absolute;
+  background: transparent;
+  height: 5rem;
+  width: 5rem;
+  top: calc(50% - 2.5rem);
+  left: calc(50% - 2.5rem);
+}
+
+.wrapper .heartWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.4s cubic-bezier(0.21, 1.79, 0.79, -0.41);
+  transition: all 0.4s cubic-bezier(0.21, 1.79, 0.79, -0.41);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.wrapper .heartWrapper .heart {
+  position: absolute;
+  top: calc(50% - 1.25rem + 5px);
+  left: calc(50% - 1.25rem + 5px);
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f20089;
+  border-radius: 0 0 10px 0px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.wrapper .heartWrapper .heart:after, .wrapper .heartWrapper .heart:before {
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 2;
+  content: ' ';
+  display: block;
+  border-radius: 100%;
+  position: absolute;
+  background-color: #f20089;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.wrapper .heartWrapper .heart:after {
+  left: -1.25rem;
+}
+
+.wrapper .heartWrapper .heart:before {
+  top: -1.25rem;
+}
+
+.wrapper .circle {
+  width: 7.5rem;
+  height: 7.5rem;
+  -webkit-transform: scale(0.2, 0.2);
+          transform: scale(0.2, 0.2);
+  background-color: red;
+  border: 0px solid transparent;
+  position: absolute;
+  border-radius: 100%;
+  top: calc(50% - 3.75rem);
+  left: calc(50% - 3.75rem);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.wrapper .circlesFirst {
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  position: absolute;
+  -webkit-transition: all 0.4s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, box-shadow 0.3s 0.1s ease-in, opacity 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, box-shadow 0.3s 0.1s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 100%;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  -webkit-box-shadow: -1.5rem 2rem 0 #8CE8C3, 1.5rem 2rem 0 #90D2FA, -2rem -1.5rem 0 #CC8EF5, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F58EA7, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #92D3FC;
+          box-shadow: -1.5rem 2rem 0 #8CE8C3, 1.5rem 2rem 0 #90D2FA, -2rem -1.5rem 0 #CC8EF5, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F58EA7, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #92D3FC;
+  opacity: 0;
+}
+
+.wrapper .circlesSecond {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.4s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, box-shadow 0.3s 0.1s ease-in, opacity 0.3s 0.1s ease-in;
+  transition: all 0.4s ease-in, box-shadow 0.3s 0.1s ease-in, opacity 0.3s 0.1s ease-in, -webkit-box-shadow 0.3s 0.1s ease-in;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-box-shadow: -1.5rem 2rem 0 #8BE7C2, 1.5rem 2rem 0 #91D1F9, -2rem -1.5rem 0 #CB8DF4, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F48DA6, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #CB8DF4;
+          box-shadow: -1.5rem 2rem 0 #8BE7C2, 1.5rem 2rem 0 #91D1F9, -2rem -1.5rem 0 #CB8DF4, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F48DA6, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #CB8DF4;
+  opacity: 0;
+}
+
+.wrapper.first .heartWrapper {
+  -webkit-transform: rotate(45deg) scale(0.1, 0.1);
+          transform: rotate(45deg) scale(0.1, 0.1);
+}
+
+.wrapper.first .heartWrapper .heart {
+  background-color: red;
+}
+
+.wrapper.first .heartWrapper .heart:after, .wrapper.first .heartWrapper .heart:before {
+  background-color: red;
+}
+
+.wrapper.first .circle {
+  -webkit-transform: scale(0.7, 0.7);
+          transform: scale(0.7, 0.7);
+  background-color: #c864c8;
+  border: 0px solid transparent;
+  opacity: 1;
+}
+
+.wrapper.second .circlesFirst {
+  -webkit-transform: rotate(7deg) scale(1.4, 1.4);
+          transform: rotate(7deg) scale(1.4, 1.4);
+  -webkit-box-shadow: -1.5rem 2rem 0 #8CE8C3, 1.5rem 2rem 0 #90D2FA, -2rem -1.5rem 0 #CC8EF5, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F58EA7, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #92D3FC;
+          box-shadow: -1.5rem 2rem 0 #8CE8C3, 1.5rem 2rem 0 #90D2FA, -2rem -1.5rem 0 #CC8EF5, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F58EA7, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #92D3FC;
+  opacity: 1;
+}
+
+.wrapper.second .circlesSecond {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  -webkit-box-shadow: -1.5rem 2rem 0 #8BE7C2, 1.5rem 2rem 0 #91D1F9, -2rem -1.5rem 0 #CB8DF4, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F48DA6, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #CB8DF4;
+          box-shadow: -1.5rem 2rem 0 #8BE7C2, 1.5rem 2rem 0 #91D1F9, -2rem -1.5rem 0 #CB8DF4, 2rem -1.5rem 0 #8CE8C3, 0rem -2.5rem 0 #F48DA6, 2.5rem 0.5rem 0px #91D2FA, -2.5rem 0.5rem 0 #CB8DF4;
+  opacity: 1;
+}
+
+.wrapper.second .circle {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  border: 10px solid #c864c8;
+  background-color: transparent;
+}
+
+.wrapper.second .heartWrapper {
+  -webkit-transform: rotate(45deg) scale(1.2, 1.2);
+          transform: rotate(45deg) scale(1.2, 1.2);
+}
+
+.wrapper.second .heartWrapper .heart {
+  background-color: red;
+}
+
+.wrapper.second .heartWrapper .heart:after, .wrapper.second .heartWrapper .heart:before {
+  background-color: red;
+}
+
+.wrapper.third .circlesFirst {
+  -webkit-transform: rotate(10deg) scale(1.4, 1.4);
+          transform: rotate(10deg) scale(1.4, 1.4);
+  height: 0px;
+  width: 0px;
+  -webkit-box-shadow: -1.5rem 2rem 0 #A068CE, 1.5rem 2rem 0 #99E9C8, -2rem -1.5rem 0 #D3F491, 2rem -1.5rem 0 #59C392, 0rem -2.5rem 0 #CAADC7, 2.5rem 0.5rem 0px #CA5ED8, -2.5rem 0.5rem 0 #C35DD1;
+          box-shadow: -1.5rem 2rem 0 #A068CE, 1.5rem 2rem 0 #99E9C8, -2rem -1.5rem 0 #D3F491, 2rem -1.5rem 0 #59C392, 0rem -2.5rem 0 #CAADC7, 2.5rem 0.5rem 0px #CA5ED8, -2.5rem 0.5rem 0 #C35DD1;
+  opacity: 1;
+}
+
+.wrapper.third .circlesSecond {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  height: 0px;
+  width: 0px;
+  -webkit-box-shadow: -1.5rem 2rem 0 #B752E1, 1.5rem 2rem 0 #BAE3D7, -2rem -1.5rem 0 #DCE483, 2rem -1.5rem 0 #67CD9F, 0rem -2.5rem 0 #959FF3, 2.5rem 0.5rem 0px #A975D1, -2.5rem 0.5rem 0 #90E0BE;
+          box-shadow: -1.5rem 2rem 0 #B752E1, 1.5rem 2rem 0 #BAE3D7, -2rem -1.5rem 0 #DCE483, 2rem -1.5rem 0 #67CD9F, 0rem -2.5rem 0 #959FF3, 2.5rem 0.5rem 0px #A975D1, -2.5rem 0.5rem 0 #90E0BE;
+  opacity: 1;
+}
+
+.wrapper.third .circle {
+  -webkit-transform: scale(0.1, 0.1);
+          transform: scale(0.1, 0.1);
+  border: 0px solid transparent;
+  background-color: transparent;
+}
+
+.wrapper.third .heartWrapper .heart {
+  background-color: red;
+}
+
+.wrapper.third .heartWrapper .heart:after, .wrapper.third .heartWrapper .heart:before {
+  background-color: red;
+}
+/*# sourceMappingURL=style.css.map */
